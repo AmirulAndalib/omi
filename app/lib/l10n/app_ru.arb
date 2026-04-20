@@ -3017,5 +3017,7 @@
     "batteryHistory": "Батарея",
     "day": "День",
     "noBatteryDataYet": "Данных о батарее пока нет",
-    "week": "Неделя"
+    "week": "Неделя",
+    "multiLanguageDetection": "Многоязычное распознавание",
+    "multiLanguageDetectionDesc": "Распознавание нескольких языков"
 }

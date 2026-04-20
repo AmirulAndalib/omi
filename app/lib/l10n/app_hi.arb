@@ -2983,5 +2983,7 @@
     "batteryHistory": "बैटरी",
     "day": "दिन",
     "noBatteryDataYet": "अभी तक कोई बैटरी डेटा नहीं",
-    "week": "सप्ताह"
+    "week": "सप्ताह",
+    "multiLanguageDetection": "बहुभाषी पहचान",
+    "multiLanguageDetectionDesc": "कई बोली जाने वाली भाषाओं का पता लगाएं"
 }

@@ -3004,5 +3004,7 @@
     "batteryHistory": "电池",
     "day": "日",
     "noBatteryDataYet": "暂无电池数据",
-    "week": "周"
+    "week": "周",
+    "multiLanguageDetection": "多语言检测",
+    "multiLanguageDetectionDesc": "检测多种口语"
 }

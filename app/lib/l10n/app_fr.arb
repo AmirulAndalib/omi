@@ -3017,5 +3017,7 @@
     "batteryHistory": "Batterie",
     "day": "Jour",
     "noBatteryDataYet": "Pas encore de données de batterie",
-    "week": "Semaine"
+    "week": "Semaine",
+    "multiLanguageDetection": "Détection multilingue",
+    "multiLanguageDetectionDesc": "Détecter plusieurs langues parlées"
 }

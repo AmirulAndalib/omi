@@ -2982,5 +2982,7 @@
     "batteryHistory": "Baterija",
     "day": "Diena",
     "noBatteryDataYet": "Kol kas nėra baterijos duomenų",
-    "week": "Savaitė"
+    "week": "Savaitė",
+    "multiLanguageDetection": "Daugiakalbis aptikimas",
+    "multiLanguageDetectionDesc": "Aptikti kelias kalbamas kalbas"
 }

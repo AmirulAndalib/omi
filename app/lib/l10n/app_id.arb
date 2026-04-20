@@ -3024,5 +3024,7 @@
     "batteryHistory": "Baterai",
     "day": "Hari",
     "noBatteryDataYet": "Belum ada data baterai",
-    "week": "Minggu"
+    "week": "Minggu",
+    "multiLanguageDetection": "Deteksi multibahasa",
+    "multiLanguageDetectionDesc": "Deteksi beberapa bahasa lisan"
 }

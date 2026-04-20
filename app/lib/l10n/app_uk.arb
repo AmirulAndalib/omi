@@ -2982,5 +2982,7 @@
     "batteryHistory": "Батарея",
     "day": "День",
     "noBatteryDataYet": "Даних про батарею ще немає",
-    "week": "Тиждень"
+    "week": "Тиждень",
+    "multiLanguageDetection": "Багатомовне виявлення",
+    "multiLanguageDetectionDesc": "Виявлення кількох розмовних мов"
 }

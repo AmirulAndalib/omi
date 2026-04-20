@@ -3078,5 +3078,7 @@
     "batteryHistory": "Akkumulátor",
     "day": "Nap",
     "noBatteryDataYet": "Még nincsenek akkumulátor adatok",
-    "week": "Hét"
+    "week": "Hét",
+    "multiLanguageDetection": "Többnyelvű felismerés",
+    "multiLanguageDetectionDesc": "Több beszélt nyelv felismerése"
 }

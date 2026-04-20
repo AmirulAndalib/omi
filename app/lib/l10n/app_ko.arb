@@ -2982,5 +2982,7 @@
     "batteryHistory": "배터리",
     "day": "일",
     "noBatteryDataYet": "아직 배터리 데이터가 없습니다",
-    "week": "주"
+    "week": "주",
+    "multiLanguageDetection": "다국어 감지",
+    "multiLanguageDetectionDesc": "여러 음성 언어 감지"
 }

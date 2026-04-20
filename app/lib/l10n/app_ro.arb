@@ -2982,5 +2982,7 @@
     "batteryHistory": "Baterie",
     "day": "Zi",
     "noBatteryDataYet": "Încă nu există date despre baterie",
-    "week": "Săptămână"
+    "week": "Săptămână",
+    "multiLanguageDetection": "Detectare multilingvă",
+    "multiLanguageDetectionDesc": "Detectează mai multe limbi vorbite"
 }

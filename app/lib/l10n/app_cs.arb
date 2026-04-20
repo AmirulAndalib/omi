@@ -2951,5 +2951,7 @@
     "batteryHistory": "Baterie",
     "day": "Den",
     "noBatteryDataYet": "Zatím žádná data o baterii",
-    "week": "Týden"
+    "week": "Týden",
+    "multiLanguageDetection": "Detekce více jazyků",
+    "multiLanguageDetectionDesc": "Detekovat více mluvených jazyků"
 }

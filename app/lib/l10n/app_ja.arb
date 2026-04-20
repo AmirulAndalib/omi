@@ -2983,5 +2983,7 @@
     "batteryHistory": "バッテリー",
     "day": "日",
     "noBatteryDataYet": "バッテリーデータはまだありません",
-    "week": "週"
+    "week": "週",
+    "multiLanguageDetection": "多言語検出",
+    "multiLanguageDetectionDesc": "複数の話し言葉を検出"
 }

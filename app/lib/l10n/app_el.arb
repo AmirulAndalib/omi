@@ -2982,5 +2982,7 @@
     "batteryHistory": "Μπαταρία",
     "day": "Ημέρα",
     "noBatteryDataYet": "Δεν υπάρχουν δεδομένα μπαταρίας ακόμα",
-    "week": "Εβδομάδα"
+    "week": "Εβδομάδα",
+    "multiLanguageDetection": "Πολυγλωσσική ανίχνευση",
+    "multiLanguageDetectionDesc": "Ανίχνευση πολλαπλών ομιλούμενων γλωσσών"
 }

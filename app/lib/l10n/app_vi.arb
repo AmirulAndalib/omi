@@ -2987,5 +2987,7 @@
     "batteryHistory": "Pin",
     "day": "Ngày",
     "noBatteryDataYet": "Chưa có dữ liệu pin",
-    "week": "Tuần"
+    "week": "Tuần",
+    "multiLanguageDetection": "Phát hiện đa ngôn ngữ",
+    "multiLanguageDetectionDesc": "Phát hiện nhiều ngôn ngữ nói"
 }

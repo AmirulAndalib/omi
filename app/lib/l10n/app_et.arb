@@ -2982,5 +2982,7 @@
     "batteryHistory": "Aku",
     "day": "Päev",
     "noBatteryDataYet": "Aku andmed puuduvad",
-    "week": "Nädal"
+    "week": "Nädal",
+    "multiLanguageDetection": "Mitmekeelne tuvastus",
+    "multiLanguageDetectionDesc": "Tuvasta mitu räägitud keelt"
 }

@@ -2982,5 +2982,7 @@
     "batteryHistory": "Akku",
     "day": "Päivä",
     "noBatteryDataYet": "Ei vielä akkutietoja",
-    "week": "Viikko"
+    "week": "Viikko",
+    "multiLanguageDetection": "Monikielinen tunnistus",
+    "multiLanguageDetectionDesc": "Tunnista useita puhuttuja kieliä"
 }

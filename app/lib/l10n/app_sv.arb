@@ -2982,5 +2982,7 @@
     "batteryHistory": "Batteri",
     "day": "Dag",
     "noBatteryDataYet": "Inga batteridata ännu",
-    "week": "Vecka"
+    "week": "Vecka",
+    "multiLanguageDetection": "Flerspråkig igenkänning",
+    "multiLanguageDetectionDesc": "Identifiera flera talade språk"
 }

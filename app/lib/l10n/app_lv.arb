@@ -2982,5 +2982,7 @@
     "batteryHistory": "Akumulators",
     "day": "Diena",
     "noBatteryDataYet": "Pagaidām nav akumulatora datu",
-    "week": "Nedēļa"
+    "week": "Nedēļa",
+    "multiLanguageDetection": "Daudzvalodu noteikšana",
+    "multiLanguageDetectionDesc": "Noteikt vairākas runātās valodas"
 }

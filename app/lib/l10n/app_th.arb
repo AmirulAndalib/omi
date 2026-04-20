@@ -2982,5 +2982,7 @@
     "batteryHistory": "แบตเตอรี่",
     "day": "วัน",
     "noBatteryDataYet": "ยังไม่มีข้อมูลแบตเตอรี่",
-    "week": "สัปดาห์"
+    "week": "สัปดาห์",
+    "multiLanguageDetection": "การตรวจจับหลายภาษา",
+    "multiLanguageDetectionDesc": "ตรวจจับภาษาพูดหลายภาษา"
 }

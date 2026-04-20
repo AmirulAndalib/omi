@@ -2949,5 +2949,7 @@
     "batteryHistory": "البطارية",
     "day": "يوم",
     "noBatteryDataYet": "لا توجد بيانات بطارية بعد",
-    "week": "أسبوع"
+    "week": "أسبوع",
+    "multiLanguageDetection": "كشف اللغات المتعددة",
+    "multiLanguageDetectionDesc": "كشف عدة لغات منطوقة"
 }

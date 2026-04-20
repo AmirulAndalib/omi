@@ -2991,5 +2991,7 @@
     "batteryHistory": "Batteri",
     "day": "Dag",
     "noBatteryDataYet": "Ingen batteridata endnu",
-    "week": "Uge"
+    "week": "Uge",
+    "multiLanguageDetection": "Flersproget registrering",
+    "multiLanguageDetectionDesc": "Registrer flere talte sprog"
 }

@@ -3017,5 +3017,7 @@
     "batteryHistory": "Pil",
     "day": "Gün",
     "noBatteryDataYet": "Henüz pil verisi yok",
-    "week": "Hafta"
+    "week": "Hafta",
+    "multiLanguageDetection": "Çok dilli algılama",
+    "multiLanguageDetectionDesc": "Birden fazla konuşulan dili algıla"
 }

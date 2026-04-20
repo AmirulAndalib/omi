@@ -2951,5 +2951,7 @@
     "batteryHistory": "Батерия",
     "day": "Ден",
     "noBatteryDataYet": "Все още няма данни за батерията",
-    "week": "Седмица"
+    "week": "Седмица",
+    "multiLanguageDetection": "Многоезично разпознаване",
+    "multiLanguageDetectionDesc": "Разпознаване на няколко говорими езика"
 }

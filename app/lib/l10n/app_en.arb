@@ -10881,5 +10881,13 @@
     "chatQuotaExceededReply": "You've hit your monthly limit. Upgrade to keep chatting with Omi without restrictions.",
     "@chatQuotaExceededReply": {
         "description": "AI reply message shown when user exceeds chat quota"
+    },
+    "multiLanguageDetection": "Multi-language Detection",
+    "@multiLanguageDetection": {
+        "description": "Title for multi-language transcription detection toggle"
+    },
+    "multiLanguageDetectionDesc": "Detect multiple spoken languages",
+    "@multiLanguageDetectionDesc": {
+        "description": "Description for multi-language detection toggle"
     }
 }

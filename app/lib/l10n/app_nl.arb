@@ -2982,5 +2982,7 @@
     "batteryHistory": "Batterij",
     "day": "Dag",
     "noBatteryDataYet": "Nog geen batterijgegevens",
-    "week": "Week"
+    "week": "Week",
+    "multiLanguageDetection": "Meertalige detectie",
+    "multiLanguageDetectionDesc": "Detecteer meerdere gesproken talen"
 }
