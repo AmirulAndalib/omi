@@ -140,9 +140,10 @@ class TestGeminiLlmFactory:
             mod._llm_cache.clear()
             mod._llm_cache.update(orig_cache)
 
+    @patch.dict(os.environ, {'GEMINI_API_KEY': 'test-fallback-key'})
     @patch('utils.llm.clients._get_vertex_access_token', side_effect=RuntimeError('ADC broken'))
     def test_vertex_creds_failure_falls_back_to_ai_studio(self, mock_token):
-        """When GCP project is set but ADC fails, falls back to GEMINI_API_KEY."""
+        """When GCP project is set but ADC fails and GEMINI_API_KEY is present, falls back to AI Studio."""
         import utils.llm.clients as mod
 
         orig_project = mod._GCP_PROJECT
@@ -157,6 +158,28 @@ class TestGeminiLlmFactory:
             mod._GCP_PROJECT = orig_project
             mod._llm_cache.clear()
             mod._llm_cache.update(orig_cache)
+
+    @patch.dict(os.environ, {}, clear=False)
+    @patch('utils.llm.clients._get_vertex_access_token', side_effect=RuntimeError('ADC broken'))
+    def test_vertex_creds_failure_no_gemini_key_fails_fast(self, mock_token):
+        """Production scenario: GCP project set, Vertex fails, no GEMINI_API_KEY → raise immediately."""
+        import utils.llm.clients as mod
+
+        orig_project = mod._GCP_PROJECT
+        orig_cache = dict(mod._llm_cache)
+        # Ensure GEMINI_API_KEY is absent
+        orig_key = os.environ.pop('GEMINI_API_KEY', None)
+        try:
+            mod._GCP_PROJECT = 'test-project'
+            mod._llm_cache.clear()
+            with pytest.raises(RuntimeError, match='ADC broken'):
+                mod._get_or_create_gemini_llm('gemini-2.5-flash-lite')
+        finally:
+            mod._GCP_PROJECT = orig_project
+            mod._llm_cache.clear()
+            mod._llm_cache.update(orig_cache)
+            if orig_key is not None:
+                os.environ['GEMINI_API_KEY'] = orig_key
 
     def test_no_project_uses_ai_studio(self):
         """Without GCP project, Gemini client uses AI Studio (GEMINI_API_KEY)."""
