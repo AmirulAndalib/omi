@@ -79,11 +79,10 @@ ingress:
   #      - chart-example.local
 
 env:
-  - name: GEMINI_API_KEY
-    valueFrom:
-      secretKeyRef:
-        name: dev-omi-backend-secrets
-        key: GEMINI_API_KEY
+  - name: GCP_LOCATION
+    value: "global"
+  - name: GCP_EMBEDDING_LOCATION
+    value: "us-central1"
   - name: DEEPGRAM_API_KEY
     valueFrom:
       secretKeyRef:
