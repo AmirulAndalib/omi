@@ -73,6 +73,27 @@ class TestGeminiLlmFactory:
             mod._llm_cache.clear()
             mod._llm_cache.update(orig_cache)
 
+    @patch.dict(os.environ, {'GEMINI_API_KEY': ''}, clear=False)
+    def test_no_project_no_key_falls_back_to_chatopen_ai(self):
+        """Without GCP project or GEMINI_API_KEY, factory returns ChatOpenAI placeholder."""
+        from langchain_openai import ChatOpenAI
+
+        import utils.llm.clients as mod
+
+        orig_project = mod._GCP_PROJECT
+        orig_cache = dict(mod._llm_cache)
+        try:
+            mod._GCP_PROJECT = ''
+            mod._llm_cache.clear()
+            llm = mod._get_or_create_gemini_llm('gemini-2.5-flash-lite')
+            default = llm._default
+            assert isinstance(default, ChatOpenAI)
+            assert 'generativelanguage.googleapis.com' in default.openai_api_base
+        finally:
+            mod._GCP_PROJECT = orig_project
+            mod._llm_cache.clear()
+            mod._llm_cache.update(orig_cache)
+
     def test_byok_resolves_to_chatopen_ai_with_ai_studio(self):
         """BYOK users get ChatOpenAI routed to AI Studio, not the Vertex SDK client."""
         from langchain_openai import ChatOpenAI
