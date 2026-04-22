@@ -234,17 +234,15 @@ class TestCacheKeyHashing:
 
 
 class TestGeminiKeyNotInUrl:
-    @patch('utils.llm.clients.httpx.post')
-    @patch('utils.llm.clients._get_vertex_access_token', return_value='vertex-test-token')
+    @patch('utils.llm.clients._get_vertex_embed_client')
     @patch('utils.llm.clients.get_byok_key', return_value=None)
-    def test_gemini_embed_vertex_uses_bearer_auth(self, mock_byok, mock_vertex_token, mock_post):
-        """Platform calls (no BYOK) route to Vertex AI with Bearer token."""
+    def test_gemini_embed_vertex_uses_sdk(self, mock_byok, mock_client):
+        """Platform calls (no BYOK) route to Vertex AI via google-genai SDK (no raw keys in URLs)."""
         import utils.llm.clients as mod
 
-        mock_response = MagicMock()
-        mock_response.json.return_value = {'embedding': {'values': [0.1, 0.2]}}
-        mock_response.raise_for_status = MagicMock()
-        mock_post.return_value = mock_response
+        mock_embed_result = MagicMock()
+        mock_embed_result.embeddings = [MagicMock(values=[0.1, 0.2])]
+        mock_client.return_value.models.embed_content.return_value = mock_embed_result
 
         orig_project = mod._GCP_PROJECT
         try:
@@ -253,13 +251,9 @@ class TestGeminiKeyNotInUrl:
         finally:
             mod._GCP_PROJECT = orig_project
 
-        call_args = mock_post.call_args
-        url = call_args[0][0] if call_args[0] else call_args[1].get('url', '')
-        assert 'aiplatform.googleapis.com' in url
-        assert '?key=' not in url
-        headers = call_args[1].get('headers', {})
-        assert headers.get('Authorization') == 'Bearer vertex-test-token'
-        assert 'x-goog-api-key' not in headers
+        # SDK handles auth internally — no raw tokens in headers or URLs
+        mock_client.assert_called_once_with('us-central1')
+        mock_client.return_value.models.embed_content.assert_called_once()
 
     @patch('utils.llm.clients.httpx.post')
     @patch('utils.llm.clients.get_byok_key', return_value='user-gemini-key-secret')
