@@ -445,6 +445,7 @@ def _get_or_create_gemini_llm(model_name: str, streaming: bool = False) -> _BYOK
         if streaming:
             kwargs['streaming'] = True
 
+        gemini_api_key = os.environ.get('GEMINI_API_KEY', '')
         if _GCP_PROJECT:
             # Vertex AI via SDK — handles ADC token refresh automatically
             default = ChatGoogleGenerativeAI(
@@ -453,11 +454,20 @@ def _get_or_create_gemini_llm(model_name: str, streaming: bool = False) -> _BYOK
                 location=_GCP_LOCATION,
                 **kwargs,
             )
-        else:
-            # No GCP project — use AI Studio with GEMINI_API_KEY
+        elif gemini_api_key:
+            # No GCP project — use AI Studio with GEMINI_API_KEY via SDK
             default = ChatGoogleGenerativeAI(
                 model=model_name,
-                api_key=os.environ.get('GEMINI_API_KEY', ''),
+                api_key=gemini_api_key,
+                **kwargs,
+            )
+        else:
+            # No GCP project and no API key — fall back to ChatOpenAI pointed at AI Studio
+            # This preserves constructability without credentials (will fail at invoke time)
+            default = ChatOpenAI(
+                model=model_name,
+                openai_api_key='placeholder',
+                openai_api_base=_GEMINI_AI_STUDIO_BASE_URL,
                 **kwargs,
             )
         _llm_cache[key] = _wrap_byok(default, model_name, 'gemini', kwargs)
