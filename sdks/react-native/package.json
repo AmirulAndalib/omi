@@ -91,9 +91,9 @@
     "proxy-agent": "^6.4.0",
     "pac-proxy-agent": "^7.0.1",
     "pac-resolver": "^7.0.1",
-    "brace-expansion": "~2.1.2",
+    "brace-expansion": "~2.1.7",
     "fast-uri": "~3.1.4",
-    "js-yaml": "~4.3.0",
+    "js-yaml": "~4.3.2",
     "shell-quote": "~1.9.0"
   },
   "engines": {
